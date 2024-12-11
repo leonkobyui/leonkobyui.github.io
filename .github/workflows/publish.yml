@@ -22,7 +22,7 @@ jobs:
       
       # Comment out the below section if you are not using python
       - name: Install Python and Dependencies
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: '3.11'
           #cache: 'pip'
@@ -30,19 +30,19 @@ jobs:
       #- run: pip install -r requirements.txt
 
       # Comment out the 2 below section if you are not using R
-      - name: Install R
-        uses: r-lib/actions/setup-r@v2
-        with:
-          #r-version: '4.3.2'
-          use-public-rspm: true
+      # - name: Install R
+      #   uses: r-lib/actions/setup-r@v2
+      #   with:
+      #     #r-version: '4.3.2'
+      #     use-public-rspm: true
 
-      - name: Install R Dependencies
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: 
-            any::tidyverse
-            any::knitr
-            any::DT
+      # - name: Install R Dependencies
+      #   uses: r-lib/actions/setup-r-dependencies@v2
+      #   with:
+      #     packages: 
+      #       any::tidyverse
+      #       any::knitr
+      #       any::DT
 
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
